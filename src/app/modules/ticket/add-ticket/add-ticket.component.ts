@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from '../../../models/ticket';
 import { TicketService } from '../../../services/ticket.service';
+import { AlertService } from '../../../services/alert.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-ticket',
@@ -11,7 +13,7 @@ export class AddTicketComponent implements OnInit {
 
   ticketModel: Ticket;
 
-  constructor(private ticketService: TicketService) {
+  constructor(private ticketService: TicketService, private alertService: AlertService, private router: Router) {
     this.ticketModel = Ticket.GetNewInstance();
   }
 
@@ -26,5 +28,7 @@ export class AddTicketComponent implements OnInit {
     this.ticketModel.postTime = new Date();
 
     this.ticketService.setTicket(this.ticketModel);
+    this.alertService.success('Your ticket has been added', true);
+    this.router.navigate(['tickets'])
   }
 }

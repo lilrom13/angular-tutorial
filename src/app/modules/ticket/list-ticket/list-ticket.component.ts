@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from '../../../models/ticket';
 import { TicketService } from '../../../services/ticket.service';
+import { AlertService } from '../../../services/alert.service';
 
 @Component({
   selector: 'app-list-ticket',
@@ -11,7 +12,7 @@ export class ListTicketComponent implements OnInit {
 
   tickets: Array<Ticket>;
 
-  constructor(private ticketService: TicketService) {
+  constructor(private ticketService: TicketService, private alertService: AlertService) {
     this.tickets = new Array<Ticket>();
   }
 
@@ -23,6 +24,10 @@ export class ListTicketComponent implements OnInit {
     this.ticketService.getTickets().then(
       tickets => {
         this.tickets = tickets;
+
+        if (this.tickets.length === 0) {
+          this.alertService.warning('Any ticket to show');
+        }
       }
     );
   }

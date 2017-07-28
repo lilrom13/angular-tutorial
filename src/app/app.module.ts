@@ -6,11 +6,14 @@ import { AppRoutingModule } from 'app/app.routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TicketModule } from './modules/ticket/ticket.module';
 import { TicketService } from './services/ticket.service';
+import { AlertComponent } from './components/alert/alert.component';
+import { AlertService } from './services/alert.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AlertComponent
   ],
   imports: [
     TicketModule,
@@ -18,7 +21,10 @@ import { TicketService } from './services/ticket.service';
     BrowserModule,
     ClarityModule.forRoot(),
   ],
-  providers: [TicketService],
+  providers: [
+    TicketService,
+    AlertService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
