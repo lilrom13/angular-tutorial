@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Ticket } from '../../../models/ticket';
 import { TicketService } from '../../../services/ticket.service';
 import { AlertService } from '../../../services/alert.service';

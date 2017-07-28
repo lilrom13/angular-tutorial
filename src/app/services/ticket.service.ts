@@ -15,4 +15,11 @@ export class TicketService {
   public setTicket(ticket: Ticket) {
     this.tickets.push(ticket);
   }
+
+  public deleteTicket(ticket: Ticket) {
+    const index = this.tickets.indexOf(ticket, 0);
+    if (index > -1) {
+      this.tickets.splice(index, 1);
+    }
+  }
 }

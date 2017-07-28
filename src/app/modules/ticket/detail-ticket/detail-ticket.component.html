@@ -1,3 +1,13 @@
+<clr-modal #deleteTicketModal [(clrModalOpen)]="opened">
+  <h3 class="modal-title">Delete ticket</h3>
+  <div class="modal-body">
+    <p>Are you sure you want to delete this this ticket ?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="deleteTicketConfirmation()">Yes</button>
+  </div>
+</clr-modal>
+
 <div class="row">
   <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12">
     <div class="card">
@@ -12,6 +22,10 @@
         <div class="card-text">
           {{ticket.content}}
         </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary">Edit</button>
+        <button class="btn btn-sm btn-warning-outline" (click)="deleteTicket()">Delete</button>
       </div>
     </div>
   </div>
