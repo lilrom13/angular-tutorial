@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ClarityModule,
     TicketRoutingModule
   ],
+  exports: [ListTicketComponent],
   declarations: [AddTicketComponent, DetailTicketComponent, ListTicketComponent]
 })
 export class TicketModule { }

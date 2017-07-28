@@ -23,7 +23,7 @@
           {{ticket.content}}
         </div>
       </div>
-      <div class="card-footer">
+      <div *ngIf="adminMode" class="card-footer">
         <button class="btn btn-sm btn-primary" (click)="redirect()">Edit</button>
         <button class="btn btn-sm btn-warning-outline" (click)="deleteTicket()">Delete</button>
       </div>

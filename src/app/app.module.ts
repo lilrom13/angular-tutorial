@@ -8,12 +8,14 @@ import { TicketModule } from './modules/ticket/ticket.module';
 import { TicketService } from './services/ticket.service';
 import { AlertComponent } from './components/alert/alert.component';
 import { AlertService } from './services/alert.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    AlertComponent
+    AlertComponent,
+    HomeComponent
   ],
   imports: [
     TicketModule,

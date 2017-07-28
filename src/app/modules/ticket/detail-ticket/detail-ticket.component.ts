@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class DetailTicketComponent implements OnInit {
 
   @Input() ticket: Ticket;
+  @Input() adminMode: Boolean = true;
 
   @ViewChild('deleteTicketModal') deleteTicketModal;
 
