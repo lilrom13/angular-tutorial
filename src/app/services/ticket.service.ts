@@ -12,7 +12,12 @@ export class TicketService {
     return Promise.resolve(this.tickets);
   }
 
+  public getTicket(id: number): Ticket {
+    return this.findTicket(id);
+  }
+
   public setTicket(ticket: Ticket) {
+    ticket.id = this.tickets.length + 1;
     this.tickets.push(ticket);
   }
 
@@ -21,5 +26,26 @@ export class TicketService {
     if (index > -1) {
       this.tickets.splice(index, 1);
     }
+  }
+
+  public updateTicket(ticket: Ticket) {
+    const tmpTicket = this.findTicket(ticket.id);
+
+    if (tmpTicket) {
+      const index = this.tickets.indexOf(tmpTicket);
+
+      if (index > -1) {
+        this.tickets[index] = ticket;
+      }
+    }
+  }
+
+  private findTicket(ticketId: number): Ticket {
+    for (const ticket of this.tickets) {
+      if (ticket.id == ticketId) {
+        return ticket;
+      }
+    }
+    return null;
   }
 }

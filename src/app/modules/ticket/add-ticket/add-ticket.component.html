@@ -22,6 +22,7 @@
     </div>
   </div>
 
-  <button type="submit" class="btn btn-success" [disabled]="!ticketForm.form.valid">Submit</button>
+  <button *ngIf="!editionMode" type="submit" class="btn btn-success" [disabled]="!ticketForm.form.valid">Submit</button>
+  <button *ngIf="editionMode" type="submit" class="btn btn-success" [disabled]="!ticketForm.form.valid">Edit</button>
   <button type="button" class="btn btn-default" (click)="newTicket(); ticketForm.reset()">New Ticket</button>
 </form>
