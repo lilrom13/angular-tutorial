@@ -6,7 +6,7 @@ export class Ticket {
   private _postedBy: string;
 
   public static GetNewInstance(): Ticket {
-    return new Ticket(null, null, null, null, null);
+    return new Ticket(0, '', '', new Date(), '');
   }
 
   public constructor(id: number, title: string, content: string, date: Date, postedBy: string) {

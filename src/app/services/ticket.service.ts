@@ -17,4 +17,8 @@ export class TicketService {
   public getTickets(): Promise<Array<Ticket>> {
     return Promise.resolve(this.tickets);
   }
+
+  public setTicket(ticket: Ticket) {
+    this.tickets.push(ticket);
+  }
 }

@@ -2,11 +2,12 @@
   <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12">
     <div class="card">
       <div class="card-header">
-        {{ticket.title}}
+        Posted by <i>{{ticket.postedBy}}</i> the <i>{{ticket.postTime.getDate() | date:'shortDate' }}
+        at {{ticket.postTime.getTime() | date: 'shortTime'}}</i>
       </div>
       <div class="card-block">
         <div class="card-title">
-          Posted by <i>{{ticket.postedBy}}</i> at <i>{{ticket.postTime}}</i>
+          {{ticket.title}}
         </div>
         <div class="card-text">
           {{ticket.content}}
